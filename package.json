@@ -1,0 +1,24 @@
+{
+  "name": "comp1004websiteproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Main.js",
+  "dependencies": {
+    "omdb": "^0.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C0gzy/Comp1004WebsiteProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/C0gzy/Comp1004WebsiteProject/issues"
+  },
+  "homepage": "https://github.com/C0gzy/Comp1004WebsiteProject#readme"
+}
