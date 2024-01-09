@@ -100,4 +100,18 @@ body{
     cursor: pointer;
     border: 0px;
     background-color: rgba(255, 255, 255, 0); 
+
+
+}
+
+.Grid-Image {
+    box-shadow: -10px 10px 4px 0px rgba(0, 0, 0, 0.50);
+    border-radius: 10px;
+}
+
+.NextButton {
+    position: absolute;
+    cursor: pointer;
+    top : 4em;
+    left: 30em;
 }
