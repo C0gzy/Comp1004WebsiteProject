@@ -1,12 +1,8 @@
 {
   "name": "comp1004websiteproject",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Horror Movie Website Database by Thomas Cogzell",
   "main": "Main.js",
-  "dependencies": {
-    "omdb": "^0.8.0"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,11 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/C0gzy/Comp1004WebsiteProject.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "dataa"
+  ],
+  "author": "Thomas Cogzell",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/C0gzy/Comp1004WebsiteProject/issues"
   },
-  "homepage": "https://github.com/C0gzy/Comp1004WebsiteProject#readme"
+  "homepage": "https://github.com/C0gzy/Comp1004WebsiteProject#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "live-server": "^1.2.2",
+    "node-fetch": "^2.7.0"
+  }
 }
