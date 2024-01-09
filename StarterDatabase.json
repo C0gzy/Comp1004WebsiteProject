@@ -7,7 +7,12 @@
 		"startYear": "2024",
 		"endYear": null,
 		"runtimeMinutes": null,
-		"genres": "Horror,Mystery,Short"
+		"genres": "Horror,Mystery,Short",
+		"PosterImage": "https://m.media-amazon.com/images/M/MV5BOGZlMjI3NGQtZDkwYS00MDg1LTk5MjQtZDM3MmQ2OGU1ZGQ3XkEyXkFqcGdeQXVyMTMyNTczMjU@._V1_SX300.jpg",
+		"Director": "Morten K. Vebjørnsen",
+		"Actors": "Morten K. Vebjørnsen",
+		"Plot": "A tired soul will have to rest in order to proceed.",
+		"imdbRating": "N/A"
 	},
 	{
 		"tconst": "tt10009066",
@@ -27,7 +32,12 @@
 		"startYear": "2023",
 		"endYear": null,
 		"runtimeMinutes": "82",
-		"genres": "Horror"
+		"genres": "Horror",
+		"PosterImage": "https://m.media-amazon.com/images/M/MV5BODA0MGZjN2QtZTQ1MS00NzBjLTk3M2YtMmYyNzhjNWJiZDdmXkEyXkFqcGdeQXVyMjU4MTk3NDU@._V1_SX300.jpg",
+		"Director": "Georgi Fomin",
+		"Actors": "Ivan Blindar, Yuriy Dyachenko, Lyudmila Efimenko",
+		"Plot": "Theater and film actor, Mykola Veresen' dies on the set while performing the role of Ivan the Terrible. In the moment of death, his karma transforms into the bloody murderer he embodied, and he falls into Sheol, a common grave for...",
+		"imdbRating": "N/A"
 	},
 	{
 		"tconst": "tt1001520",
@@ -37,7 +47,12 @@
 		"startYear": "2023",
 		"endYear": null,
 		"runtimeMinutes": "118",
-		"genres": "Fantasy,Horror"
+		"genres": "Fantasy,Horror",
+		"PosterImage": "https://m.media-amazon.com/images/M/MV5BOTljMzRkNDItNjYxYS00ODA4LThiZjYtMjI0MTFjODlmMGJmXkEyXkFqcGdeQXVyNzU0NzQxNTE@._V1_SX300.jpg",
+		"Director": "André Øvredal",
+		"Actors": "Corey Hawkins, Aisling Franciosi, Liam Cunningham",
+		"Plot": "A crew sailing from Varna (Bulgaria) by the Black Sea to England find that they are carrying very dangerous cargo.",
+		"imdbRating": "6.1"
 	},
 	{
 		"tconst": "tt10042482",
@@ -47,7 +62,12 @@
 		"startYear": "2023",
 		"endYear": null,
 		"runtimeMinutes": "80",
-		"genres": "Drama,Horror"
+		"genres": "Drama,Horror",
+		"PosterImage": "https://m.media-amazon.com/images/M/MV5BNTg0MjEzZjktNTdjMS00ZjkyLWI1ZjYtNDRjNTI1MDNjNjdjXkEyXkFqcGdeQXVyMjM4MDcyNjI@._V1_SX300.jpg",
+		"Director": "Gabriel Bienczycki, Richard Karpala",
+		"Actors": "Piotr Adamczyk, Orianna Milne, Samantha Turret",
+		"Plot": "On the first night of harvest, three brothers set out for the desert to see a witch's corpse.",
+		"imdbRating": "N/A"
 	},
 	{
 		"tconst": "tt10092698",
@@ -57,7 +77,12 @@
 		"startYear": "2023",
 		"endYear": null,
 		"runtimeMinutes": "76",
-		"genres": "Horror,Thriller"
+		"genres": "Horror,Thriller",
+		"PosterImage": "https://m.media-amazon.com/images/M/MV5BYjg2NDM1MmMtNmM0Zi00OTdiLTlmNDctOTFhMTAwNmM1ZmNmXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_SX300.jpg",
+		"Director": "Eren Celeboglu, Ari Costa",
+		"Actors": "Asa Butterfield, Natalia Dyer, Benjamin Evan Ainsworth",
+		"Plot": "A group of Salem teens discover a cursed knife that unleashes a demon that forces them to play gruesome, deadly versions of childhood games where there can be no winners, only survivors.",
+		"imdbRating": "4.3"
 	},
 	{
 		"tconst": "tt10094388",
@@ -67,7 +92,12 @@
 		"startYear": "2023",
 		"endYear": null,
 		"runtimeMinutes": "85",
-		"genres": "Horror,Thriller"
+		"genres": "Horror,Thriller",
+		"PosterImage": "https://m.media-amazon.com/images/M/MV5BYmJhYWE4Y2YtY2EwYS00NmY0LWI4MzYtMWFmODUxZTQ4NTc2XkEyXkFqcGdeQXVyNzg3MTg3Njg@._V1_SX300.jpg",
+		"Director": "Gabe Torres",
+		"Actors": "Marco Fuller, Fivel Stewart, Tonantzin Carmelo",
+		"Plot": "An ancient Chippewa demon, the WINDIGO, is resurrected by a Native American teenager and his grandmother to protect their family after a run-in with back-woods meth dealers. They soon discover that the creature's lust for killing ...",
+		"imdbRating": "N/A"
 	},
 	{
 		"tconst": "tt10110572",
@@ -77,7 +107,12 @@
 		"startYear": "2023",
 		"endYear": null,
 		"runtimeMinutes": null,
-		"genres": "Action,Horror,Romance"
+		"genres": "Action,Horror,Romance",
+		"PosterImage": "https://m.media-amazon.com/images/M/MV5BZjc2YjA3OGYtZjQyYi00MTMzLWIwOGUtYmQxODdlOGM4OGEwXkEyXkFqcGdeQXVyNTA2MTI4NTk@._V1_SX300.jpg",
+		"Director": "Ashley Wilding",
+		"Actors": "Jake Lacey, Jessica Sherry, Brad Silver",
+		"Plot": "An anonymous terrorist organisation rise from the underground taking New York City by storm. A daunting and ferocious chain of events unfold resulting in a partial lockdown of the city to isolate and prevent further terrorist acti...",
+		"imdbRating": "N/A"
 	},
 	{
 		"tconst": "tt0191010",
@@ -87,7 +122,12 @@
 		"startYear": "2022",
 		"endYear": null,
 		"runtimeMinutes": "102",
-		"genres": "Horror"
+		"genres": "Horror",
+		"PosterImage": "https://m.media-amazon.com/images/M/MV5BMzlkOTgzZGUtMGExNi00YjdlLWFiMWQtYzgyZDYwY2Q1OGNmXkEyXkFqcGdeQXVyMTcwNjY3MTY@._V1_SX300.jpg",
+		"Director": "Eric Swelstad",
+		"Actors": "Dino Tripodis, Nick Baldasare, Shanna Thomas",
+		"Plot": "Single father Paul Henson purchases a newspaper in the small town of Copperton, Ohio and moves there with his teenage daughter Christina. The two soon come to realize the townsfolk, led by the evil Reverend Donovan, are actually S...",
+		"imdbRating": "5.8"
 	},
 	{
 		"tconst": "tt0326635",
@@ -97,7 +137,12 @@
 		"startYear": "2022",
 		"endYear": null,
 		"runtimeMinutes": "104",
-		"genres": "Horror"
+		"genres": "Horror",
+		"PosterImage": "https://m.media-amazon.com/images/M/MV5BMTQ0NTE4MTgwNF5BMl5BanBnXkFtZTcwMTIwMzU1MQ@@._V1_SX300.jpg",
+		"Director": "William Hopkins",
+		"Actors": "Jacqueline Anderson, Adrian Alvarado, Richard Ryan, Gil Lopez Jr.",
+		"Plot": "EVIL IS ETERNAL The mortal world is under attack, as supremely powerful vampire leader, Lord Malgaard, executes an evil plan to reduce mankind to a race of unwilling blood donors!",
+		"imdbRating": "4.1"
 	},
 	{
 		"tconst": "tt0443438",

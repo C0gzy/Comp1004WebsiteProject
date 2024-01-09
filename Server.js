@@ -71,15 +71,11 @@ async function getData(filmID) {
 let rawdata = fs.readFileSync('./StarterDatabase.json');
 let Films = JSON.parse(rawdata);
 
-console.log(Films);
-async function GetFilmData() {
+async function UpdateFilmData() {
   for (var i = 0; i < (CurrentPage * 10) + MaxDisplayPerPage; i++) {
 
-    console.log(Films[i]); 
     if (Films[i].PosterImage == null){
-      console.log(Films[i].tconst);
       let CurrentReturnData = await getData(Films[i].tconst);
-      console.log(CurrentReturnData);
       Films[i].PosterImage = CurrentReturnData.Poster;
       Films[i].Director = CurrentReturnData.Director;
       Films[i].Actors = CurrentReturnData.Actors;
@@ -87,15 +83,13 @@ async function GetFilmData() {
       Films[i].Ratings = CurrentReturnData.RaStings;
       Films[i].imdbRating = CurrentReturnData.imdbRating;
       Films[i].language = CurrentReturnData.language;
-  
-      console.log(Films[i]);
-  
-      //fs.writeFileSync('./StarterDatabase.json', JSON.stringify(Films[i]));
+      //
     }
   };
+  fs.writeFileSync('./StarterDatabase.json', JSON.stringify(Films , null , "\t"));
 }
 
-GetFilmData();
+UpdateFilmData();
 
 
 
