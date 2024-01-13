@@ -92,16 +92,18 @@ body{
     grid-template-columns: repeat(5 , 1fr);
     padding: 10px;
     position: absolute;
-
-    top: 6em;
-    left: 1vw;
+    
+    top: 15%;
+    left: 2vw;
 }
 
-.grid-item {
+.grid-item { 
+    z-index: 0;
     padding: 20px;
     cursor: pointer;
     border: 0px;
     background-color: rgba(255, 255, 255, 0); 
+
 
 
 
@@ -117,12 +119,97 @@ body{
     min-height: 1em;
 }
 
+.MovieDetails  {
+
+    background-color: #ffbb6a;
+    width: 25vw;
+    height: 26vw;
+    
+    border-radius: 1vw;
+}
+
+.MovieDetailsImage {
+    box-shadow: -5px 5px 4px 0px rgba(0, 0, 0, 0.50);
+    border-radius: 1vw;
+    position: relative;
+    top: 5%;
+    left: -25%;
+
+    height: 50%;
+    width: 40%;
+    min-width: .1em;
+    min-height: .1em;
+}
+
+.MovieDetailsTitle {
+    position: relative;
+    margin-bottom: 0px;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Koulen;
+    font-size: 240%;
+    font-style: normal;
+    font-weight: 400%;
+    line-height: normal;
+}
+
+.MovieDetailsPlot {
+    text-align: left;
+    font-family: Koulen;
+    white-space: pre-line;
+    position: relative;
+    font-size: 130%;
+    line-height: 1em;
+    top: -50%;
+    left: 47%;
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+}
+
+.Rating {
+    font-size: 110%;
+    font-family: Koulen;
+    line-height: 1em;
+    position: relative;
+    text-align: left;
+    white-space: pre-line;
+    top: -52%;
+    left: 2%;
+}
+
+.Genres {
+    font-size: 110%;
+    font-family: Koulen;
+    line-height: 1em;
+    position: relative;
+    text-align: center;
+    white-space: pre-line;
+    top: -63%;
+    left: 20%;
+}
+
+.DirectorAndActors {
+    font-size: 110%;
+    font-family: Koulen;
+    line-height: 1em;
+    position: relative;
+    text-align: left;
+    white-space: pre-line;
+    top: -55%;
+    left: 3%;
+}
+
+#PrevNextBar {
+    min-width: 10vw;
+}
+
 .NextButton   {
 
     top : 12vh;
-    left: 70%;
+    left: 68%;
     width: 15vw;
-    min-width: 10vw;
+   
     position: absolute;
     font-size: 4vmin;
     cursor: pointer;
@@ -137,7 +224,7 @@ body{
     width: 15vw;
     min-width: 10vw;
     top : 12vh;
-    left: 20%;
+    left: 15%;
     font-size: 4vmin;
 
     border-radius: 90px;
@@ -145,9 +232,12 @@ body{
 }
 .PageNumber {
     position: absolute;
-    top : 9vh;
-    left: 45%;
-    font-size: 5vmin;
+    justify-content: center;
+    
+    top : 8vh;
+    left: 40%;
+   
+    font-size: 6vmin;
     border-radius: 90px;
     border: 0px;
 }
