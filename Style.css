@@ -81,18 +81,20 @@ body{
     font-style: normal;
     font-weight: 400%;
     line-height: normal;
+
+    
 }
 
 .grid-container {
-    top: 10%;
+
 
     display: grid;
     grid-template-columns: repeat(5 , 1fr);
     padding: 10px;
     position: absolute;
 
-    top: 5em;
-    left: 5em;
+    top: 6em;
+    left: 1vw;
 }
 
 .grid-item {
@@ -102,16 +104,50 @@ body{
     background-color: rgba(255, 255, 255, 0); 
 
 
+
 }
 
 .Grid-Image {
     box-shadow: -10px 10px 4px 0px rgba(0, 0, 0, 0.50);
-    border-radius: 10px;
+    border-radius: 2vw;
+    height: 100%;
+    width: 100%;
+
+    min-width: 1em;
+    min-height: 1em;
 }
 
-.NextButton {
+.NextButton   {
+
+    top : 12vh;
+    left: 70%;
+    width: 15vw;
+    min-width: 10vw;
+    position: absolute;
+    font-size: 4vmin;
+    cursor: pointer;
+    border-radius: 90px;
+    border: 0px;
+
+}
+
+.PrevButton {
     position: absolute;
     cursor: pointer;
-    top : 4em;
-    left: 30em;
+    width: 15vw;
+    min-width: 10vw;
+    top : 12vh;
+    left: 20%;
+    font-size: 4vmin;
+
+    border-radius: 90px;
+    border: 0px;
+}
+.PageNumber {
+    position: absolute;
+    top : 9vh;
+    left: 45%;
+    font-size: 5vmin;
+    border-radius: 90px;
+    border: 0px;
 }

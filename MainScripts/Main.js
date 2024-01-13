@@ -16,7 +16,15 @@ window.onload = function() {
 
 
 
-function UpdatePage() {
+function UpdatePage(increment = 0) {
+    Page += increment;
+
+    if (Page < 0){ 
+        Page = 0;
+    }
+
+    document.getElementById("PageNumber").innerHTML = "Page " + (Page + 1) + " of " + Math.ceil(Database.length / DisplayPerPage);
+
     console.log("Updating Page" + CurrentDisplayedImages);
     for (var i=0; i < CurrentDisplayedImages.length; i++){
         CurrentDisplayedImages[i].remove();
@@ -35,5 +43,5 @@ function UpdatePage() {
         document.getElementById("FilmGrid").appendChild(FilmImage);  
         CurrentDisplayedImages.push(FilmImage);   
     }
-    Page++;
+   
 }

@@ -81,11 +81,25 @@ async function getData(filmID) {
 let rawdata = fs.readFileSync('./StarterDatabase.json');
 let Films = JSON.parse(rawdata);
 
-const removeAdultFilms = (List) => List.filter(Films => Films.isAdult == 1);
+const removeAdultFilms = (List) => List.filter(Films => Films.isAdult != 1);
+const removeEpisodes = (List) => List.filter(Films => Films.titleType != "tvEpisode");
+const removeVideoGames = (List) => List.filter(Films => Films.titleType != "videoGame");
+const removeVideos = (List) => List.filter(Films => Films.titleType != "video");
+
+function RemoveUnwantedFilms(){
+  const StartNumber = Films.length;
+
+  Films=removeAdultFilms(Films);
+  Films=removeEpisodes(Films);
+  Films=removeVideoGames(Films);
+  Films=removeVideos(Films);
+  fs.writeFileSync('./StarterDatabase.json', JSON.stringify(Films , null , "\t"));
+  console.log("Films Removed - " + (StartNumber - Films.length));
+}
 
 async function UpdateFilmData() {
-  removeAdultFilms(Films);
-  for (var i = 110; i < 160; i++) {
+  RemoveUnwantedFilms();
+  for (var i = 159; i < 160; i++) {
     if (Films[i].PosterImage == null){
       
 
