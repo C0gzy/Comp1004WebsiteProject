@@ -6,20 +6,26 @@
 
     <body>
 
-        <div class = "TopBar">
+        <nav class = "TopBar">
+            <section class="LeftBar">
             <input class = "SearchBar" placeholder="Search for Movies">
                 <button class = "SearchButton">
                     <img src="Images/Mag.png" style="max-height: 100vmin; max-width: 100%;">
                 </button>
 
             </input>
+            </section>
+            <section class="RightBar">
             <h1 class = "Title">TOP HORROR</h1>
+            </section>
             
-        </div>
+        </nav>
+        <br />
         <div  id = "PrevNextBar">
-            <button class = "NextButton" onclick="UpdatePage(1)">Next</button>
-            <h1 class = "PageNumber" id="PageNumber">1 of 100</h1>
             <button class = "PrevButton" onclick="UpdatePage(-1)">Prev</button>
+            <h1 class = "PageNumber" id="PageNumber">1 of 100</h1>
+            <button class = "NextButton" onclick="UpdatePage(1)">Next</button>
+           
         </div>
 
         <div class="grid-container" id="FilmGrid">

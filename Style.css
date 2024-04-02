@@ -9,23 +9,37 @@ body{
 
 .TopBar {
     /* Size and position */
-    position: absolute;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-content: center;
+
     top: 0%;
     left: 0%;
     width: 100%;
-    height: 10%;
-
-    min-height: 4em;
-    max-height: 15%;
+    height: 8vh;
 
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     background-color: #ffbb6a;
 }
 
+.LeftBar {
+    float: left;
+    position: absolute;
+    margin-left: 0%;
+    
+}
+
+.RightBar {
+    
+    float: right;
+    margin-left: 60%;
+    width: 45vw;
+}
+
 
 .SearchBar {
     /* Size and position */
-    position: absolute;
     
     padding: 0% 4%; 
 
@@ -64,23 +78,25 @@ body{
     -webkit-user-select: none; 
     -ms-user-select: none; 
     user-select: none; 
-
+    height: 100%;
     
     
     /* Center the text and select font and size*/
-    position: absolute;
-    left: 55%;
-    top: -.4em;
-    margin-top: 0%;
+
+    margin: 0;
+    
+    /*margin-top: 0%;*/
+ 
 
     text-shadow: -6px 4px 4px rgba(54, 52, 52, 0.385);
     font-family: Koulen;
-    font-size: 10vmin;
+    font-size: 100px;
     
 
-    font-style: normal;
+ 
     font-weight: 400%;
-    line-height: normal;
+   
+    border-top: 0;
 
     
 }
@@ -89,16 +105,16 @@ body{
 
 
     display: grid;
-    grid-template-columns: repeat(5 , 1fr);
+    grid-template-columns: repeat(auto-fit , minmax(20rem , 1fr));
     padding: 10px;
-    position: absolute;
+    position: relative;
     
-    top: 15%;
+
     left: 2vw;
 }
 
 .grid-item { 
-    z-index: 0;
+    z-index: 10;
     padding: 20px;
     cursor: pointer;
     border: 0px;
@@ -110,8 +126,9 @@ body{
 }
 
 .Grid-Image {
+    aspect-ratio: 10 / 16;
     box-shadow: -10px 10px 4px 0px rgba(0, 0, 0, 0.50);
-    border-radius: 2vw;
+    border-radius: 20px;
     height: 100%;
     width: 100%;
 
@@ -119,18 +136,23 @@ body{
     min-height: 1em;
 }
 
-.MovieDetails  {
+.Grid-Image:hover {
+    transform: scale(1.1);
+}
 
+.MovieDetails  {
+    position: relative;
+    z-index: 500;
     background-color: #ffbb6a;
-    width: 25vw;
-    height: 26vw;
+    width: 120%;
+    height: 50vh;
     
     border-radius: 1vw;
 }
 
 .MovieDetailsImage {
     box-shadow: -5px 5px 4px 0px rgba(0, 0, 0, 0.50);
-    border-radius: 1vw;
+    border-radius: 10px;
     position: relative;
     top: 5%;
     left: -25%;
@@ -201,16 +223,20 @@ body{
 }
 
 #PrevNextBar {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
     min-width: 10vw;
+    top : 5dvh;
 }
 
 .NextButton   {
-
-    top : 12vh;
-    left: 68%;
+    float: right;
     width: 15vw;
    
-    position: absolute;
+    position: relative;
     font-size: 4vmin;
     cursor: pointer;
     border-radius: 90px;
@@ -219,23 +245,20 @@ body{
 }
 
 .PrevButton {
-    position: absolute;
+    float: left;
+    position: relative;
     cursor: pointer;
     width: 15vw;
     min-width: 10vw;
-    top : 12vh;
-    left: 15%;
     font-size: 4vmin;
 
     border-radius: 90px;
     border: 0px;
 }
 .PageNumber {
-    position: absolute;
+    position: relative;
     justify-content: center;
     
-    top : 8vh;
-    left: 40%;
    
     font-size: 6vmin;
     border-radius: 90px;
