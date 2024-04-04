@@ -10,7 +10,7 @@ const server = http.createServer(function(req, res) {
     if (filename[1] == "Images") {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'image/png');
-      const img = fs.readFileSync(`./images/${filename[2]}`);
+      const img = fs.readFileSync(`./Images/${filename[2]}`);
       res.write(img);
     }
     else if (filename[1] == "fonts"){
@@ -99,7 +99,7 @@ function RemoveUnwantedFilms(){
 
 async function UpdateFilmData() {
   RemoveUnwantedFilms();
-  for (var i = 159; i < 160; i++) {
+  for (var i = 799; i < 800; i++) {
     if (Films[i].PosterImage == null){
       
 

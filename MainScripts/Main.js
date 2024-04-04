@@ -1,5 +1,5 @@
 var Page = 0;
-var DisplayPerPage = 60;
+var DisplayPerPage = 100;
 var CurrentDisplayedImages = [];
 var Database;
 
@@ -14,37 +14,39 @@ window.onload = function() {
 
 }
 
-
-
-function UpdatePage(increment = 0) {
+function UpdatePage(increment = 0 , WhichSet = Database) {
     Page += increment;
 
     if (Page < 0){ 
         Page = 0;
     }
 
-    document.getElementById("PageNumber").innerHTML = "Page " + (Page + 1) + " of " + Math.ceil(Database.length / DisplayPerPage);
+    document.getElementById("PageNumber").innerHTML = "Page " + (Page + 1) + " of " + Math.ceil(WhichSet.length / DisplayPerPage);
     for (var i=0; i < CurrentDisplayedImages.length; i++){
         CurrentDisplayedImages[i].remove();
     }
 
     for (var i=(Page * DisplayPerPage); i < (Page * DisplayPerPage) + DisplayPerPage; i++){
+
+        if (i >= WhichSet.length){
+            break;
+        }
+
         var FilmImage = document.createElement("div")
         var PosterImage = "Images/No_picture_available.png"
-        if ((Database[i].PosterImage != null ) && (Database[i].PosterImage != "N/A")){
-            PosterImage = Database[i].PosterImage;
+        if ((WhichSet[i].PosterImage != null ) && (WhichSet[i].PosterImage != "N/A")){
+            PosterImage = WhichSet[i].PosterImage;
         }
-        console.log(PosterImage);
         FilmImage.innerHTML = 
         `<button class="grid-item"> 
             <img class="Grid-Image" src=${PosterImage} > 
             <div hidden class="MovieDetails"> 
-                <h1 class="MovieDetailsTitle">${Database[i].primaryTitle}</h1>
+                <h1 class="MovieDetailsTitle">${WhichSet[i].primaryTitle}</h1>
                 <img class="MovieDetailsImage" src=${PosterImage} >  
-                <p class="MovieDetailsPlot">Release Year: ${Database[i].startYear} \n \n Plot: \n ${Database[i].Plot}</p>
-                <p class="Rating">      Rating: \n${Database[i].imdbRating}</p>
-                <p class="Genres">Genres: \n${Database[i].genres}</p>
-                <p class="DirectorAndActors">Director: ${Database[i].Director}\n Actors: ${Database[i].Actors}</p>
+                <p class="MovieDetailsPlot">Release Year: ${WhichSet[i].startYear} \n \n Plot: \n ${WhichSet[i].Plot}</p>
+                <p class="Rating">      Rating: \n${WhichSet[i].imdbRating}</p>
+                <p class="Genres">Genres: \n${WhichSet[i].genres}</p>
+                <p class="DirectorAndActors">Director: ${WhichSet[i].Director}\n Actors: ${WhichSet[i].Actors}</p>
             </div> 
         </button>`
 
@@ -58,10 +60,29 @@ function UpdatePage(increment = 0) {
    
 }
  
-
 function moviepostclick(e){
     var FilmImage = e.currentTarget;
     console.log(FilmImage.getElementsByClassName("Grid-Image"));
     FilmImage.getElementsByClassName("Grid-Image")[0].hidden = !FilmImage.getElementsByClassName("Grid-Image")[0].hidden;
     FilmImage.getElementsByClassName("MovieDetails")[0].hidden = !FilmImage.getElementsByClassName("MovieDetails")[0].hidden;
+}
+
+var SearchBar = document.getElementById("SearchBar")
+
+SearchBar.addEventListener("keyup", function(event) {
+    if (event.key == "Enter") {
+        event.preventDefault();
+        Search();
+    }
+});
+
+function Search(){
+    var SearchTerm = SearchBar.value;
+    console.log(SearchTerm);
+    var FilteredDatabase = Database.filter(function (el) {
+        return el.primaryTitle.toLowerCase().includes(SearchTerm.toLowerCase());
+      });
+    console.log(FilteredDatabase);
+    Page = 0;
+    UpdatePage(0 , FilteredDatabase);
 }

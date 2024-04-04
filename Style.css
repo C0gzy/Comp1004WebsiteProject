@@ -232,7 +232,9 @@ body{
     position: relative;
     align-items: center;
     justify-content: center;
+    gap: 5%;
 
+    width: 80%;
     min-width: 10vw;
     top : 5dvh;
 }
