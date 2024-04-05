@@ -99,10 +99,8 @@ function RemoveUnwantedFilms(){
 
 async function UpdateFilmData() {
   RemoveUnwantedFilms();
-  for (var i = 799; i < 800; i++) {
+  for (var i = 1599; i < 1606; i++) {
     if (Films[i].PosterImage == null){
-      
-
       let CurrentReturnData = await getData(Films[i].tconst);
       Films[i].PosterImage = CurrentReturnData.Poster;
       Films[i].Director = CurrentReturnData.Director;

@@ -27,6 +27,7 @@ body{
 }
 
 .LeftBar {
+    display: flex;
     float: left;
     
 }
@@ -53,12 +54,8 @@ body{
 }
 
 .SearchButton{
-    position: absolute;
-    size:100px 100px;
-   
-    top: 26%;
-    height: 4vmin;
-    width: 5vmin;
+
+    max-width: 8%;
     left: 8%;
 
     min-width: 2em;
