@@ -171,3 +171,10 @@ function Export(){
     hiddenElement.click();
     hiddenElement.remove();
 }
+
+function randomFilm(){
+    var RandomFilm = Database[Math.floor(Math.random() * Database.length)];
+    console.log(RandomFilm);
+    SearchBar.value = RandomFilm.primaryTitle;
+    Search();
+}

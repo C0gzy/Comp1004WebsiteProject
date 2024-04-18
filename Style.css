@@ -364,3 +364,11 @@ body{
     border-radius: 90px;
     border: 0px;
 }
+
+.RandomButton {
+    font-size: 60px;
+    background-color: rgb(225, 225, 225,0);
+    border: 0px;
+    cursor: pointer;
+    font-weight: 300;
+}
