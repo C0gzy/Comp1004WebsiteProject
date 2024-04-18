@@ -23,18 +23,30 @@
                     <div class="CheckBoxes" >Short<input id="ShortFilter" type="checkbox"></input> </div>
                     
                     <input id="YearInput" class="FilterInput" placeholder="Year"></input>
-                    <button class="FilterButtonSumbit" onclick="Filter()"></button>
+                    <button class="FilterButtonSumbit" onclick="Filter()">Submit</button>
                 </div>
 
             </div>
 
             </section>
 
-            <section style="width: 20%;"></section>
+            
 
             <section class="RightBar">
-            <input type="file" accept=".json" id="ImportButton">Import</input>
-            <button id="ExportButton" onclick="Export()">Export</button>
+            
+            <div class="ImportExport">
+            <label class="LabelImport" for="ImportButton">Import</label>
+            <input 
+                
+                type="file" 
+                accept=".json" 
+                id="ImportButton" 
+                name="ImportButton"
+                hidden
+            />
+            <label class="LabelImport" for="ExportButton">Export</label>
+            <button id="ExportButton" onclick="Export()" hidden>Export</button>
+            </div>
             <h1 class = "Title">TOP HORROR</h1>
             </section>
             

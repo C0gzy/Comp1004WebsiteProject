@@ -46,14 +46,25 @@ function UpdatePage(increment = 0 , WhichSet = Database) {
             <img class="Grid-Image" src=${PosterImage} ></img>
             
             <div hidden class="MovieDetails"> 
+            <h1 class="MovieDetailsTitle">${WhichSet[i].primaryTitle}</h1>
+                <div class="MovieContainer">
+
+                <div class="MovieDetailsLeft">
                 
-                <h1 class="MovieDetailsTitle">${WhichSet[i].primaryTitle}</h1>
                 <img class="MovieDetailsImage" src=${PosterImage} >  
-                <input id="${ID}" type="checkbox" class="FavButton">Favourite</input>
-                <p class="MovieDetailsPlot">Release Year: ${WhichSet[i].startYear} \n \n Plot: \n ${WhichSet[i].Plot}</p>
                 <p class="Rating">      Rating: \n${WhichSet[i].imdbRating}</p>
-                <p class="Genres">Genres: \n${WhichSet[i].genres}</p>
                 <p class="DirectorAndActors">Director: ${WhichSet[i].Director}\n Actors: ${WhichSet[i].Actors}</p>
+
+                </div>
+                <div class="MovieDetailsRight">
+                <p class="MovieDetailsPlot">Release Year: ${WhichSet[i].startYear} \n \n Plot: \n ${WhichSet[i].Plot}</p>
+                <input id="${ID}" type="checkbox" class="FavButton">Favourite</input>
+                <p class="Genres">Genres: \n${WhichSet[i].genres}</p>
+                </div>
+                
+                
+                
+                </div>
             </div> 
         </button>`
 

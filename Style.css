@@ -36,8 +36,30 @@ body{
 .RightBar {
     display: flex;
     float: right;
+    align-items: center;
 }
 
+.ImportExport {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0% 0% 0% 0%;
+
+}
+
+.LabelImport {
+    font-family: Koulen;
+    font-size: 20px;
+    margin: 0% 0% 0% 0%;
+    cursor: pointer;
+
+}
+
+.FilterButtonSumbit {
+    height: 2.5vh;
+}
 
 .SearchBar {
     /* Size and position */
@@ -105,6 +127,7 @@ body{
 .Filter {
     font-family: Koulen;
     height: 50%;
+    
 }
 
 .CheckBoxes {
@@ -158,25 +181,31 @@ body{
     transform: scale(1.1);
 }
 
+.MovieContainer {
+    display: flex;
+    gap: 5%;
+
+}
+
 .MovieDetails  {
     position: relative;
     z-index: 500;
     background-color: #ffbb6a;
     width: 120%;
-    height: 50vh;
+    height: 50%;
     
     border-radius: 1vw;
 }
 
 .MovieDetailsImage {
+    aspect-ratio: 10 / 16;
     box-shadow: -5px 5px 4px 0px rgba(0, 0, 0, 0.50);
     border-radius: 10px;
     position: relative;
-    top: 5%;
-    left: -25%;
 
-    height: 50%;
-    width: 40%;
+
+    height: 100%;
+    width: 15vh;
     min-width: .1em;
     min-height: .1em;
 }
@@ -193,6 +222,17 @@ body{
     line-height: normal;
 }
 
+
+.MovieDetailsRight {
+    display: flex;
+    flex-direction: column;
+}
+
+.MovieDetailsLeft {
+    display: flex;
+    flex-direction: column;
+}
+
 .MovieDetailsPlot {
     text-align: left;
     font-family: Koulen;
@@ -200,10 +240,12 @@ body{
     position: relative;
     font-size: 130%;
     line-height: 1em;
+    /*
     top: -50%;
     left: 47%;
-    width: 50%;
-    height: 50%;
+    */
+    width: 100%;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -214,8 +256,7 @@ body{
     position: relative;
     text-align: left;
     white-space: pre-line;
-    top: -52%;
-    left: 2%;
+
 }
 
 
@@ -233,8 +274,10 @@ body{
     position: relative;
     text-align: center;
     white-space: pre-line;
+    /*
     top: -63%;
     left: 20%;
+    */
 }
 
 .DirectorAndActors {
@@ -244,8 +287,7 @@ body{
     position: relative;
     text-align: left;
     white-space: pre-line;
-    top: -55%;
-    left: 3%;
+
 }
 
 #PrevNextBar {
