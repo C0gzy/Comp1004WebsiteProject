@@ -8,6 +8,7 @@ body{
 }
 
 .TopBar {
+    /* Styles a top navigation bar. It uses flexbox for layout, positions it at the top of the page, and gives it a box shadow and background color. */
     /* Size and position */
     display: flex;
     flex-direction: row;
@@ -27,6 +28,7 @@ body{
 }
 
 .LeftBar {
+    /* Styles a sidebar on the left. It uses flexbox for layout and is floated to the left. */
     display: flex;
     float: left;
     align-items: center;
@@ -34,12 +36,14 @@ body{
 }
 
 .RightBar {
+    /* Styles a sidebar on the right. It uses flexbox for layout and is floated to the right. */
     display: flex;
     float: right;
     align-items: center;
 }
 
 .ImportExport {
+    /* Styles a section related to importing/exporting data buttons. It uses flexbox for layout and centers its content. */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,6 +54,7 @@ body{
 }
 
 .LabelImport {
+    /* Styles a label for the import feature. It uses the custom "Koulen" font and makes the text act as a clickable element. */
     font-family: Koulen;
     font-size: 20px;
     margin: 0% 0% 0% 0%;
@@ -58,10 +63,12 @@ body{
 }
 
 .FilterButtonSumbit {
+    /* Styles a submit button for a filter feature. It sets a specific height for the button. */
     height: 2.5vh;
 }
 
 .SearchBar {
+    /* Styles a search bar. It sets padding, font size, height, width, border radius, and box shadow. */
     /* Size and position */
     
     padding: 0% 4%; 
@@ -77,7 +84,7 @@ body{
 }
 
 .SearchButton{
-
+ /* Styles a search button. It sets maximum and minimum width, positions it to the left, and makes it act as a clickable element. */
     max-width: 8%;
     left: 8%;
 
@@ -91,6 +98,7 @@ body{
 }
  
 .Title{
+     /* Styles a title. centers the text, applies a text shadow, and uses the custom "Koulen" font. */
     /* Make it so the text can't be selected */
     -webkit-user-select: none; 
     -ms-user-select: none; 
@@ -119,22 +127,26 @@ body{
 }
 
 .FilterBar {
+    /* Styles a filter bar. It uses flexbox for layout and arranges its content in a column. */
     display: flex;
     flex-direction: column;
 
 }
 
 .Filter {
+    /* Styles a filter. It uses the custom "Koulen" font and sets a specific height. */
     font-family: Koulen;
     height: 50%;
     
 }
 
 .CheckBoxes {
+    /* Styles a group of checkboxes. It uses flexbox for layout. */
     display: flex;
 }
 
 .FilmDisplay {
+    /* Styles a section for displaying films. It uses flexbox for layout and arranges its content in a column. */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -142,7 +154,7 @@ body{
 }
 
 .grid-container {
-
+/* Styles a grid container for displaying items. It sets a specific width and uses CSS Grid for layout. */
 
     display: grid;
     width: 90%;
@@ -155,6 +167,7 @@ body{
 }
 
 .grid-item { 
+    /* Styles an individual item in the grid. It sets padding, makes it act as a clickable element, and sets a specific z-index. */
     z-index: 10;
     padding: 20px;
     cursor: pointer;
@@ -167,6 +180,7 @@ body{
 }
 
 .Grid-Image {
+     /* Styles an image in the grid. It sets aspect ratio, box shadow, border radius, height, and width. */
     aspect-ratio: 10 / 16;
     box-shadow: -10px 10px 4px 0px rgba(0, 0, 0, 0.50);
     border-radius: 20px;
@@ -178,16 +192,19 @@ body{
 }
 
 .Grid-Image:hover {
+    /* Styles an image in the grid when it's hovered over. It scales the image up slightly. */
     transform: scale(1.1);
 }
 
 .MovieContainer {
+    /* Styles a container for movie details. It uses flexbox for layout and sets a gap between items. */
     display: flex;
     gap: 5%;
 
 }
 
 .MovieDetails  {
+    /* Styles a section for movie details. It positions it relative to its container, sets a specific z-index, background color, width, height, and border radius. */
     position: relative;
     z-index: 500;
     background-color: #ffbb6a;
@@ -198,6 +215,7 @@ body{
 }
 
 .MovieDetailsImage {
+    /* Styles an image in the movie details. It sets aspect ratio, box shadow, border radius, position, height, width, and minimum width and height. */
     aspect-ratio: 10 / 16;
     box-shadow: -5px 5px 4px 0px rgba(0, 0, 0, 0.50);
     border-radius: 10px;
@@ -211,6 +229,7 @@ body{
 }
 
 .MovieDetailsTitle {
+     /* Styles a title in the movie details. It positions it relative to its container, centers the text, applies a text shadow, and uses the custom "Koulen" font. */
     position: relative;
     margin-bottom: 0px;
     text-align: center;
@@ -224,16 +243,19 @@ body{
 
 
 .MovieDetailsRight {
+   /* Styles a section on the right in the movie details. It uses flexbox for layout and arranges its content in a column. */
     display: flex;
     flex-direction: column;
 }
 
 .MovieDetailsLeft {
+   /* Styles a section on the left in the movie details. It uses flexbox for layout and arranges its content in a column. */
     display: flex;
     flex-direction: column;
 }
 
 .MovieDetailsPlot {
+     /* Styles a plot in the movie details. It aligns the text to the left, uses the custom "Koulen" font, and sets a specific width, height, and overflow behavior. */
     text-align: left;
     font-family: Koulen;
     white-space: pre-line;
@@ -250,6 +272,7 @@ body{
 }
 
 .Rating {
+    /* Styles a rating in the movie details. It sets font size, uses the custom "Koulen" font, positions it relative to its container, aligns the text to the left, and sets white-space behavior. */
     font-size: 110%;
     font-family: Koulen;
     line-height: 1em;
@@ -262,12 +285,14 @@ body{
 
 
 .FavButton {
+   /* Styles a favorite button in the movie details. It positions it relative to its container and sets a specific z-index. */
     position: relative;
     z-index: 500;
     top: 0%;
 }
 
 .Genres {
+    /* Styles a genres section in the movie details. It sets font size, uses the custom "Koulen" font, positions it relative to its container, centers the text, and sets white-space behavior. */
     font-size: 110%;
     font-family: Koulen;
     line-height: 1em;
@@ -281,6 +306,7 @@ body{
 }
 
 .DirectorAndActors {
+     /* Styles a section for director and actors in the movie details. It sets font size, uses the custom "Koulen" font, positions it relative to its container, aligns the text to the left, and sets white-space behavior. */
     font-size: 110%;
     font-family: Koulen;
     line-height: 1em;
@@ -291,6 +317,7 @@ body{
 }
 
 #PrevNextBar {
+    /* Styles a bar for previous and next navigation. It uses flexbox for layout, positions it relative to its container, aligns and justifies its content to the center, and sets a gap between items. */
     display: flex;
     position: relative;
     align-items: center;
@@ -303,6 +330,7 @@ body{
 }
 
 .NextButton   {
+    /* Styles a next button. It floats it to the right, positions it relative to its container, makes it act as a clickable element, and sets a specific width, font size, border radius, and border. */
     float: right;
     width: 15vw;
    
@@ -315,6 +343,7 @@ body{
 }
 
 .PrevButton {
+    /* Styles a previous button. It floats it to the left, positions it relative to its container, makes it act as a clickable element, and sets a specific width, minimum width, font size, border radius, and border. */
     float: left;
     position: relative;
     cursor: pointer;
@@ -326,6 +355,7 @@ body{
     border: 0px;
 }
 .PageNumber {
+    /* Styles a page number. It positions it relative to its container, centers its content, and sets a specific font size, border radius, and border. */
     position: relative;
     justify-content: center;
     

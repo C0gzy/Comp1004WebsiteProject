@@ -3,6 +3,7 @@ const http = require('http');
 const fetch = require('node-fetch');
 
 //Server Initial Response
+// Response with the correct requested file type
 const server = http.createServer(function(req, res) {
   const filename = req.url.split('/');
   try{
@@ -44,6 +45,7 @@ const server = http.createServer(function(req, res) {
       }
     }
   }
+  // If the file is not found, return a 404 error
   catch (err) {
     res.statusCode = 404;
     res.write('404 Not Found');
@@ -53,6 +55,7 @@ const server = http.createServer(function(req, res) {
 
 const port = 3000;
 
+// Start the server on port 3000 
 server.listen(port, function(error) {
   if (error) {
     console.log('Something went wrong', error);
@@ -64,7 +67,7 @@ server.listen(port, function(error) {
 //Database
 
 
-
+// Fetdata from the API if needed
 async function getData(filmID) {
   const FilmData = await fetch('http://www.omdbapi.com/?i=' + filmID +'&apikey=21bc72d6' );
   const FilmDataJson = await FilmData.json();
@@ -72,10 +75,11 @@ async function getData(filmID) {
 
 }
 
-
+// Read the JSON file
 let rawdata = fs.readFileSync('./StarterDatabase.json');
 let Films = JSON.parse(rawdata);
 
+// Remove unwanted films
 const removeAdultFilms = (List) => List.filter(Films => Films.isAdult != 1);
 const removeEpisodes = (List) => List.filter(Films => Films.titleType != "tvEpisode");
 const removeVideoGames = (List) => List.filter(Films => Films.titleType != "videoGame");
@@ -92,10 +96,12 @@ function RemoveUnwantedFilms(){
   console.log("Films Removed - " + (StartNumber - Films.length));
 }
 
+// Update the film data from a range
+// add poster image , plot , ratings etc
 async function UpdateFilmData() {
-  RemoveUnwantedFilms();
+  RemoveUnwantedFilms(); //remove any unwanted films
   for (var i = 5400; i < 5400; i++) {
-    if (Films[i].PosterImage == null){
+    if (Films[i].PosterImage == null){ // if film data is not already present
       let CurrentReturnData = await getData(Films[i].tconst);
       Films[i].PosterImage = CurrentReturnData.Poster;
       Films[i].Director = CurrentReturnData.Director;
@@ -108,21 +114,9 @@ async function UpdateFilmData() {
       //
     }
   };
+  // Write the updated data to the JSON file
   fs.writeFileSync('./StarterDatabase.json', JSON.stringify(Films , null , "\t"));
   console.log("Done");
 }
 
 UpdateFilmData();
-
-
-
-
-/*
-var ModernFilms = Films.filter(function (n, i) {
-    return n.startYear > 2000;
-});
-
-
-
-console.log(ModernFilms);
-*/

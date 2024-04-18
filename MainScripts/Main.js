@@ -1,10 +1,11 @@
+//Main global variables
 var Page = 0;
 var DisplayPerPage = 100;
 var CurrentDisplayedImages = [];
 var Database;
 var CurrentSavedFavorites = [];
 
-
+// When page if fully loaded request the database from the server
 window.onload = function() {
     fetch('/StarterDatabase.json').then(response => response.json()).then(data => {
         console.log(data);
@@ -14,32 +15,37 @@ window.onload = function() {
 
 }
 
+//When a change in datbase occurs or the user wants to go to a different page call this function
 function UpdatePage(increment = 0 , WhichSet = Database) {
     Page += increment;
 
+    // if the page + the increment is less than 0 set the page to 0
     if (Page < 0){ 
         Page = 0;
     }
 
     document.getElementById("PageNumber").innerHTML = "Page " + (Page + 1) + " of " + Math.ceil(WhichSet.length / DisplayPerPage);
-    for (var i=0; i < CurrentDisplayedImages.length; i++){
-        CurrentDisplayedImages[i].remove();
+    for (var i=0; i < CurrentDisplayedImages.length; i++){ //remove all old data from the page
+        CurrentDisplayedImages[i].remove(); //delete all html elements
     }
 
-    for (var i=(Page * DisplayPerPage); i < (Page * DisplayPerPage) + DisplayPerPage; i++){
+    // for lopp through the data and display the data from the current page till a display max of the page
+    for (var i=(Page * DisplayPerPage); i < (Page * DisplayPerPage) + DisplayPerPage; i++){ 
 
+        // if the index is greater than the length of the data break the loop
         if (i >= WhichSet.length){
             break;
-        } else if (WhichSet[i] == null){
+        } else if (WhichSet[i] == null){ // if the data is null skip this iteration
             continue;
         }
 
+        // create element poster data for the film
         var FilmImage = document.createElement("div")
         var PosterImage = "Images/No_picture_available.png"
         if ((WhichSet[i].PosterImage != null ) && (WhichSet[i].PosterImage != "N/A")){
             PosterImage = WhichSet[i].PosterImage;
         }
-        var ID =  WhichSet[i].tconst;
+        var ID =  WhichSet[i].tconst; // ID for the film
         FilmImage.innerHTML = 
         `<button class="grid-item" id="${i+ID}"> 
             
@@ -68,13 +74,13 @@ function UpdatePage(increment = 0 , WhichSet = Database) {
             </div> 
         </button>`
 
-        FilmImage.onclick = moviepostclick;
+        FilmImage.onclick = moviepostclick; // asign the onclick function to the div
 
 
-        document.getElementById("FilmGrid").appendChild(FilmImage);  
+        document.getElementById("FilmGrid").appendChild(FilmImage);   // add the div to the page
 
-        CurrentDisplayedImages.push(FilmImage);   
-        document.getElementById(i+ID).addEventListener( "click" , function (event) {
+        CurrentDisplayedImages.push(FilmImage);   // push the div to the current displayed images
+        document.getElementById(i+ID).addEventListener( "click" , function (event) { //add the favourite function to the fav button
             console.log(event.target.id);
             CurrentSavedFavorites.push(WhichSet.filter(a => a.tconst == event.target.id)[0]);
             console.log(CurrentSavedFavorites);
@@ -83,6 +89,7 @@ function UpdatePage(increment = 0 , WhichSet = Database) {
    
 }
  
+//when movie poster is clicked show the movie details and hide the poster
 function moviepostclick(e){
     var FilmImage = e.currentTarget;
     console.log(FilmImage.getElementsByClassName("Grid-Image"));
@@ -92,6 +99,7 @@ function moviepostclick(e){
 
 var SearchBar = document.getElementById("SearchBar")
 
+// WHen the enter key is pressed in the search bar call the search function
 SearchBar.addEventListener("keyup", function(event) {
     if (event.key == "Enter") {
         event.preventDefault();
@@ -99,24 +107,19 @@ SearchBar.addEventListener("keyup", function(event) {
     }
 });
 
+// When the search button is clicked call the search function
 function Search(){
     var SearchTerm = SearchBar.value;
     console.log(SearchTerm);
     var FilteredDatabase = Database.filter(function (el) {
-        return el.primaryTitle.toLowerCase().includes(SearchTerm.toLowerCase());
+        return el.primaryTitle.toLowerCase().includes(SearchTerm.toLowerCase()); // filter the database by the search term
       });
     console.log(FilteredDatabase);
     Page = 0;
-    UpdatePage(0 , FilteredDatabase);
+    UpdatePage(0 , FilteredDatabase); //update the page
 }
 
-var ActiveFilters = {
-    "movie": true,
-    "short": true,
-    "tvSeries": true,
-    "StartYear": 0,
-    "imdbRating": 0
-}
+
 
 var FilterBar = document.getElementById("FilterBar");
 
@@ -125,6 +128,7 @@ function ShowFilterBar(){
     FilterBar.hidden = !FilterBar.hidden;
 }
 
+// When the filter button is clicked call the filter function
 function Filter(){
     var StartYear = Database.filter(function (el) {
         return el.startYear > document.getElementById("YearInput").value;//ActiveFilters["StartYear"];
@@ -138,12 +142,13 @@ function Filter(){
         return el;
     });
     Page = 0;
-    UpdatePage(0 , movieFilter);
+    UpdatePage(0 , movieFilter); //update page
 }
 
 var ImportButton = document.getElementById("ImportButton");
 ImportButton.addEventListener("change", Import);
 
+// import the data from a file
 function Import(Event){
     var ImportedFile = document.getElementById("ImportButton").files[0];
     console.log(ImportedFile);
@@ -156,8 +161,9 @@ function Import(Event){
     };
 }
 
+// export the data to a file
 function Export(){
-    var textToSave = JSON.stringify(CurrentSavedFavorites);
+    var textToSave = JSON.stringify(CurrentSavedFavorites); // Convert Json array to a text JSON format
     var hiddenElement = document.createElement('a');
     hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
     hiddenElement.target = '_blank';
