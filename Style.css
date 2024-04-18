@@ -29,6 +29,7 @@ body{
 .LeftBar {
     display: flex;
     float: left;
+    align-items: center;
     
 }
 
@@ -99,6 +100,15 @@ body{
     display: flex;
     flex-direction: column;
 
+}
+
+.Filter {
+    font-family: Koulen;
+    height: 50%;
+}
+
+.CheckBoxes {
+    display: flex;
 }
 
 .FilmDisplay {
@@ -206,6 +216,14 @@ body{
     white-space: pre-line;
     top: -52%;
     left: 2%;
+}
+
+
+
+.FavButton {
+    position: relative;
+    z-index: 500;
+    top: 0%;
 }
 
 .Genres {

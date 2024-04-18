@@ -9,30 +9,32 @@
 
         <nav class = "TopBar">
             <section class="LeftBar">
-            <button class ="Filter" onclick="ShowFilterBar()">Filter</button>
-            <div hidden id="FilterBar">
-                <div class="FilterBar">
-                    <input id="movieFilter" type="checkbox">Movie</input>
-                    <input id="ShortFilter" type="checkbox">Short</input>
-                    <input id="tvSerisFilter" type="checkbox">Movie</input>
-                    <input id="YearInput" class="FilterInput" placeholder="Year"></input>
-                    <button class="FilterButtonSumbit" onclick="Filter()"></button>
-                </div>
 
-            </div>
             <button class = "SearchButton" onclick="Search()">
             <img src="Images/Mag.png" style="max-height: 100vmin; max-width: 100%;">
             </button>
             <input id="SearchBar" class="SearchBar" placeholder="Search for Movies">
             </input>
+            <div style="width: 5%;"></div>
+            <button class ="Filter" onclick="ShowFilterBar()">Filter</button>
+            <div hidden id="FilterBar">
+                <div class="FilterBar">
+                    <div class="CheckBoxes" >Movie <input id="movieFilter" type="checkbox"></input></div>
+                    <div class="CheckBoxes" >Short<input id="ShortFilter" type="checkbox"></input> </div>
+                    
+                    <input id="YearInput" class="FilterInput" placeholder="Year"></input>
+                    <button class="FilterButtonSumbit" onclick="Filter()"></button>
+                </div>
+
+            </div>
 
             </section>
 
             <section style="width: 20%;"></section>
 
             <section class="RightBar">
-            <button id="ImportBUtton">Import</button>
-            <button id="ExportButton">Export</button>
+            <input type="file" accept=".json" id="ImportButton">Import</input>
+            <button id="ExportButton" onclick="Export()">Export</button>
             <h1 class = "Title">TOP HORROR</h1>
             </section>
             

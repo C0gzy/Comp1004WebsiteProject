@@ -2,6 +2,8 @@ var Page = 0;
 var DisplayPerPage = 100;
 var CurrentDisplayedImages = [];
 var Database;
+var CurrentSavedFavorites = [];
+
 
 window.onload = function() {
     fetch('/StarterDatabase.json').then(response => response.json()).then(data => {
@@ -28,6 +30,8 @@ function UpdatePage(increment = 0 , WhichSet = Database) {
 
         if (i >= WhichSet.length){
             break;
+        } else if (WhichSet[i] == null){
+            continue;
         }
 
         var FilmImage = document.createElement("div")
@@ -35,12 +39,17 @@ function UpdatePage(increment = 0 , WhichSet = Database) {
         if ((WhichSet[i].PosterImage != null ) && (WhichSet[i].PosterImage != "N/A")){
             PosterImage = WhichSet[i].PosterImage;
         }
+        var ID =  WhichSet[i].tconst;
         FilmImage.innerHTML = 
-        `<button class="grid-item"> 
-            <img class="Grid-Image" src=${PosterImage} > 
+        `<button class="grid-item" id="${i+ID}"> 
+            
+            <img class="Grid-Image" src=${PosterImage} ></img>
+            
             <div hidden class="MovieDetails"> 
+                
                 <h1 class="MovieDetailsTitle">${WhichSet[i].primaryTitle}</h1>
                 <img class="MovieDetailsImage" src=${PosterImage} >  
+                <input id="${ID}" type="checkbox" class="FavButton">Favourite</input>
                 <p class="MovieDetailsPlot">Release Year: ${WhichSet[i].startYear} \n \n Plot: \n ${WhichSet[i].Plot}</p>
                 <p class="Rating">      Rating: \n${WhichSet[i].imdbRating}</p>
                 <p class="Genres">Genres: \n${WhichSet[i].genres}</p>
@@ -54,6 +63,11 @@ function UpdatePage(increment = 0 , WhichSet = Database) {
         document.getElementById("FilmGrid").appendChild(FilmImage);  
 
         CurrentDisplayedImages.push(FilmImage);   
+        document.getElementById(i+ID).addEventListener( "click" , function (event) {
+            console.log(event.target.id);
+            CurrentSavedFavorites.push(WhichSet.filter(a => a.tconst == event.target.id)[0]);
+            console.log(CurrentSavedFavorites);
+        });
     }
    
 }
@@ -114,4 +128,29 @@ function Filter(){
     });
     Page = 0;
     UpdatePage(0 , movieFilter);
+}
+
+var ImportButton = document.getElementById("ImportButton");
+ImportButton.addEventListener("change", Import);
+
+function Import(Event){
+    var ImportedFile = document.getElementById("ImportButton").files[0];
+    console.log(ImportedFile);
+    var reader = new FileReader();
+    reader.readAsText(ImportedFile);
+    reader.onload = function() {
+        var NewDataBase = JSON.parse(reader.result);
+        console.log(NewDataBase);
+        UpdatePage(0, NewDataBase);
+    };
+}
+
+function Export(){
+    var textToSave = JSON.stringify(CurrentSavedFavorites);
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = 'FavData.json';
+    hiddenElement.click();
+    hiddenElement.remove();
 }
