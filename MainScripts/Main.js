@@ -7,9 +7,7 @@ window.onload = function() {
     fetch('/StarterDatabase.json').then(response => response.json()).then(data => {
         console.log(data);
         Database = data;
-
         UpdatePage();
-
     })
 
 }
@@ -85,4 +83,35 @@ function Search(){
     console.log(FilteredDatabase);
     Page = 0;
     UpdatePage(0 , FilteredDatabase);
+}
+
+var ActiveFilters = {
+    "movie": true,
+    "short": true,
+    "tvSeries": true,
+    "StartYear": 0,
+    "imdbRating": 0
+}
+
+var FilterBar = document.getElementById("FilterBar");
+
+function ShowFilterBar(){
+    console.log(FilterBar);
+    FilterBar.hidden = !FilterBar.hidden;
+}
+
+function Filter(){
+    var StartYear = Database.filter(function (el) {
+        return el.startYear > document.getElementById("YearInput").value;//ActiveFilters["StartYear"];
+    });
+    var movieFilter = StartYear.filter(function (el) {
+        if (document.getElementById("movieFilter").checked == true) {
+            return el.titleType == "movie";
+        }else if (document.getElementById("ShortFilter").checked == true) {
+            return el.titleType == "short";
+        }
+        return el;
+    });
+    Page = 0;
+    UpdatePage(0 , movieFilter);
 }

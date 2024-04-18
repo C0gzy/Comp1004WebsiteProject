@@ -33,7 +33,7 @@ body{
 }
 
 .RightBar {
-    
+    display: flex;
     float: right;
 }
 
@@ -93,6 +93,12 @@ body{
     border-top: 0;
 
     
+}
+
+.FilterBar {
+    display: flex;
+    flex-direction: column;
+
 }
 
 .FilmDisplay {

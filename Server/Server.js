@@ -65,11 +65,6 @@ server.listen(port, function(error) {
 
 
 
-
-var MaxDisplayPerPage = 10;
-var CurrentPage = 0;
-//100
-
 async function getData(filmID) {
   const FilmData = await fetch('http://www.omdbapi.com/?i=' + filmID +'&apikey=21bc72d6' );
   const FilmDataJson = await FilmData.json();
@@ -99,7 +94,7 @@ function RemoveUnwantedFilms(){
 
 async function UpdateFilmData() {
   RemoveUnwantedFilms();
-  for (var i = 1599; i < 1606; i++) {
+  for (var i = 5400; i < 5400; i++) {
     if (Films[i].PosterImage == null){
       let CurrentReturnData = await getData(Films[i].tconst);
       Films[i].PosterImage = CurrentReturnData.Poster;
