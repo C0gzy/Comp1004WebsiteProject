@@ -7,7 +7,7 @@ var CurrentSavedFavorites = [];
 
 // When page if fully loaded request the database from the server
 window.onload = function() {
-    fetch('/StarterDatabase.json').then(response => response.json()).then(data => {
+    fetch('https://tomcogzell.com/SubWebs/Comp1004WebsiteProject/StarterDatabase.json').then(response => response.json()).then(data => {
         console.log(data);
         Database = data;
         UpdatePage();
